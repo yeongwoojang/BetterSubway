@@ -17,6 +17,9 @@ class HomeActivity : AppCompatActivity() {
         menu_bt.setOnClickListener {
             drawer_layout.openDrawer(GravityCompat.START)
         }
+        seat_info_bt.setOnClickListener {
+            startActivity(Intent(this@HomeActivity,SeatInfoActivity::class.java))
+        }
         nav_view.setNavigationItemSelectedListener {item->
             item.isChecked = true
             drawer_layout.closeDrawers()
