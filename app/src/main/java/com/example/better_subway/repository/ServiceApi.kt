@@ -1,5 +1,6 @@
 package com.example.better_subway.repository
 
+import com.example.better_subway.model.vo.ArrivalInfo
 import com.example.better_subway.model.vo.StationInfo
 import retrofit2.http.*
 
@@ -10,6 +11,12 @@ interface ServiceApi {
     }
 
 
+    //지하철 노선들을 불러오는 메소드
     @GET("/android/stationInfo")
     suspend fun getStationInfo() : StationInfo
+
+
+    @GET("/android/arrivalTime")
+    suspend fun  getArrivalTime(@Query("station") station :String) : ArrivalInfo
+
 }

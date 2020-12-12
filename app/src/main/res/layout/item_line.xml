@@ -17,7 +17,7 @@
             android:padding="3dp"
             android:text="@{line.toString()}"
             android:textColor="@color/white"
-            android:background="@color/appMainColor"
+            android:background="@drawable/style_main"
             android:layout_margin="0.5dp"
             />
     </LinearLayout>

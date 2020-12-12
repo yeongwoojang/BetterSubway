@@ -11,7 +11,7 @@ import com.example.better_subway.model.vo.Station
 class StationViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
     val binding = ItemStationBinding.bind(itemView)
 }
-class StationListAdpater :RecyclerView.Adapter<StationViewHolder>(){
+class StationListAdpater(var listener : StationListener) :RecyclerView.Adapter<StationViewHolder>(){
 
     private var mItems :List<Station> = ArrayList<Station>()
 
@@ -32,5 +32,11 @@ class StationListAdpater :RecyclerView.Adapter<StationViewHolder>(){
 
     override fun onBindViewHolder(holder: StationViewHolder, position: Int) {
         holder.binding.station = mItems[position]
+        holder.binding.stationBt.setOnClickListener {
+            listener.request(holder.binding.stationName.text.toString())
+        }
+    }
+    interface StationListener{
+        fun request(station : String)
     }
 }
