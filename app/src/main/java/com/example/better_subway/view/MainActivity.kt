@@ -13,10 +13,14 @@ class MainActivity : AppCompatActivity() {
 
         sign_up_page_bt.setOnClickListener {
             startActivity(Intent(this@MainActivity,SignUpActivity::class.java))
+            overridePendingTransition(R.anim.right_in,R.anim.left_out)
+            finish()
         }
 
         sign_in_page_bt.setOnClickListener {
             startActivity(Intent(this@MainActivity,SignInActivity::class.java))
+            overridePendingTransition(R.anim.right_in,R.anim.left_out)
+            finish()
         }
     }
 }

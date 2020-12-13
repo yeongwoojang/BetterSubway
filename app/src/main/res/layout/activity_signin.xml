@@ -1,94 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_in_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/style_main"
+    android:fillViewport="true"
     tools:context=".view.MainActivity">
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/transparent">
+            android:layout_height="match_parent">
 
-            <TextView
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Better Subway"
-                android:textSize="30dp"
-                android:gravity="center"
-                android:fontFamily="@font/bm_dohyeon_ttf"
-                android:textColor="@color/white"
-                />
-        </androidx.appcompat.widget.Toolbar>
-        <ImageView
-            android:id="@+id/main_image"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_below="@+id/toolbar"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/icon_subway"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/main_image"
-            android:orientation="vertical"
-            android:gravity="top"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SIGN IN"
-                android:textColor="@color/white"
-                android:fontFamily="@font/bm_dohyeon_ttf"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                android:textColor="@color/gray200"
-                android:textColorHint="@color/gray200"
-                android:backgroundTint="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Id"
-                android:textColor="@color/gray200"
-                android:textColorHint="@color/gray200"
-                android:backgroundTint="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                />
-            <Button
-                android:id="@+id/sign_in_bt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="GET STARTED"
-                android:fontFamily="@font/bm_dohyeon_ttf"
-                android:textColor="@color/appMainColor"
-                android:background="@drawable/form_button"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp"
-                />
-        </LinearLayout>
-    </RelativeLayout>
+                android:layout_height="100dp"
+                android:background="@color/transparent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bm_dohyeon_ttf"
+                    android:gravity="center"
+                    android:text="Better Subway"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+            </androidx.appcompat.widget.Toolbar>
 
-</LinearLayout>
+            <ImageView
+                android:id="@+id/main_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/toolbar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/icon_subway" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/main_image"
+                android:gravity="top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:fontFamily="@font/bm_dohyeon_ttf"
+                    android:gravity="center"
+                    android:text="SIGN IN"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/sigin_in_id_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    android:hint="Id"
+                    android:textColor="@color/gray200"
+                    android:textColorHint="@color/gray200" />
+
+                <EditText
+                    android:id="@+id/sign_in_password_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    android:hint="Password"
+                    android:textColor="@color/gray200"
+                    android:textColorHint="@color/gray200" />
+
+                <Button
+                    android:id="@+id/sign_in_bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/form_button"
+                    android:fontFamily="@font/bm_dohyeon_ttf"
+                    android:text="GET STARTED"
+                    android:textColor="@color/appMainColor" />
+
+                <Button
+                    android:id="@+id/go_to_main_bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/form_button"
+                    android:fontFamily="@font/bm_dohyeon_ttf"
+                    android:text="GO TO MAIN"
+                    android:textColor="@color/appMainColor" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

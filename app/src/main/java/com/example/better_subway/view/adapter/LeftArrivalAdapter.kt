@@ -41,11 +41,12 @@ class LeftArrivalAdapter(var listener: leftArrivalAdtListener) : RecyclerView.Ad
         val arrival : Arrival = mItems[position]
         holder.binding.arrival = mItems[position]
         holder.binding.train1Bt.setOnClickListener {
-            listener.request()
+            Log.d("TRAIN_NUM", "onBindViewHolder: ${arrival.trainNum.toString()}")
+            listener.request(arrival.trainNum)
         }
     }
     interface leftArrivalAdtListener{
-        fun request()
+        fun request(trainNum : Int)
     }
 }
 @BindingAdapter("arrivalTime1")

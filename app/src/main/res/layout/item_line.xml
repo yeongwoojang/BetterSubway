@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="line"
-            type= "java.lang.String" />
+            type= "com.example.better_subway.model.vo.Line" />
     </data>
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        >
 
         <Button
             android:id="@+id/line_bt"
@@ -15,9 +18,10 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/bm_dohyeon_ttf"
             android:padding="3dp"
-            android:text="@{line.toString()}"
+            android:text="@{line.line.toString()}"
+            app:tabColor = "@{line}"
             android:textColor="@color/white"
-            android:background="@drawable/style_main"
+            android:background="@color/transparent"
             android:layout_margin="0.5dp"
             />
     </LinearLayout>

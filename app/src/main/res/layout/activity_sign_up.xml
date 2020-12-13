@@ -1,121 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/style_main"
+    android:fillViewport="true"
     tools:context=".view.MainActivity">
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/transparent">
+            android:layout_height="match_parent">
 
-            <TextView
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Better Subway"
-                android:textSize="30dp"
-                android:gravity="center"
-                android:fontFamily="@font/bm_dohyeon_ttf"
-                android:textColor="@color/white"
-                />
-        </androidx.appcompat.widget.Toolbar>
-        <ImageView
-            android:id="@+id/main_image"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_below="@+id/toolbar"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/icon_subway"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/main_image"
-            android:orientation="vertical"
-            android:gravity="top"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="CREATE YOUR LOGIN"
-                android:textColor="@color/white"
-                android:fontFamily="@font/bm_dohyeon_ttf"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                android:textColor="@color/gray200"
-                android:textColorHint="@color/gray200"
-                android:backgroundTint="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Id"
-                android:textColor="@color/gray200"
-                android:textColorHint="@color/gray200"
-                android:backgroundTint="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                android:textColor="@color/gray200"
-                android:textColorHint="@color/gray200"
-                android:backgroundTint="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                />
+                android:layout_height="100dp"
+                android:background="@color/transparent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bm_dohyeon_ttf"
+                    android:gravity="center"
+                    android:text="Better Subway"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <ImageView
+                android:id="@+id/main_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/toolbar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/icon_subway" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <Button
+                android:layout_height="match_parent"
+                android:layout_below="@+id/main_image"
+                android:gravity="top"
+                android:orientation="vertical">
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="20dp"
-                    android:text="CANCEL"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:fontFamily="@font/bm_dohyeon_ttf"
+                    android:gravity="center"
+                    android:text="CREATE YOUR LOGIN"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:fontFamily="@font/bm_dohyeon_ttf"
-                    />
-                <Button
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/sign_up_name_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/form_button"
-                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="SAVE"
-                    android:textColor="@color/appMainColor"
-                    android:textSize="15dp"
-                    android:fontFamily="@font/bm_dohyeon_ttf"
-                  />
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    android:hint="Name"
+                    android:textColor="@color/gray200"
+                    android:textColorHint="@color/gray200" />
+
+                <EditText
+                    android:id="@+id/sign_up_id_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    android:hint="Id"
+                    android:textColor="@color/gray200"
+                    android:textColorHint="@color/gray200" />
+
+                <EditText
+                    android:id="@+id/sign_up_password_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    android:hint="Password"
+                    android:textColor="@color/gray200"
+                    android:textColorHint="@color/gray200" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/cancel_bt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/bm_dohyeon_ttf"
+                        android:text="CANCEL"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <Button
+                        android:id="@+id/save_bt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/form_button"
+                        android:fontFamily="@font/bm_dohyeon_ttf"
+                        android:text="SAVE"
+                        android:textColor="@color/appMainColor"
+                        android:textSize="15dp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </RelativeLayout>
-
-
-</LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

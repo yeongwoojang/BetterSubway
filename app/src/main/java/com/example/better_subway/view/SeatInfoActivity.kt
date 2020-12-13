@@ -24,10 +24,12 @@ class SeatInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seat_info)
 
-        val adapter1 = LineListAdapter(object : LineListAdapter.LineListener{
-            override fun request() {
-                Log.d("TEST", "request: Button is Clicked...")
+        val adapter1 = LineListAdapter(this,object : LineListAdapter.LineListener{
+            override fun request(position : Int) {
+                sub_recyclerView.scrollToPosition(0)
+                viewModel.update(position)
                 viewModel.getStationInfo()
+
             }
         })
         val adapter2 = StationListAdpater(object  : StationListAdpater.StationListener{
@@ -35,8 +37,11 @@ class SeatInfoActivity : AppCompatActivity() {
                 viewModel.getArrivalTime(station)
             }
         })
+        viewModel.initList()
+        viewModel.lineListLiveData.observe(this, Observer {
+            adapter1.updateItems(it)
+        })
 
-        adapter1.updateItems(viewModel.initList())
 
         recyclerview.apply{
             this.layoutManager = LinearLayoutManager(this@SeatInfoActivity,RecyclerView.HORIZONTAL,false)
@@ -57,4 +62,5 @@ class SeatInfoActivity : AppCompatActivity() {
             startActivity(intent)
         })
     }
+
 }

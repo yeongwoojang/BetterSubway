@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/style_main"
+    android:orientation="vertical"
     tools:context=".view.SeatInfoActivity">
 
     <RelativeLayout
@@ -15,44 +15,77 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
             android:background="@color/transparent">
 
             <ImageButton
                 android:id="@+id/menu_bt"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@color/transparent"
                 android:scaleType="fitXY"
-                android:src="@drawable/icon_previous" />
+                android:src="@drawable/icon_left_arrow" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/bm_dohyeon_ttf"
-                android:text="교통약자석 정보"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:text="역 검색"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
         </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_search_box"
+                    android:layout_margin="10dp"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:layout_toLeftOf="@+id/search_bt"
+                        android:background="@drawable/form_edittext"
+                        android:backgroundTint="@color/white"
+                        android:paddingLeft="5dp"
+                        android:elevation="8dp"
+                        android:hint="찾으시려는 역을 검색하세요"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray200" />
+                    <ImageButton
+                        android:id="@+id/search_bt"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon_search"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@color/transparent"
+                       />
+                </RelativeLayout>
+            </FrameLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/sub_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
-               />
+                android:background="@color/transparent" />
         </LinearLayout>
 
     </RelativeLayout>

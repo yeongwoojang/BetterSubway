@@ -18,7 +18,7 @@ class RightArrivalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     val binding = ItemRightArrivalBinding.bind(itemView)
 }
 
-class RightArrivalAdapter : RecyclerView.Adapter<RightArrivalViewHolder>() {
+class RightArrivalAdapter(val listener : RightArrivalAdtListener) : RecyclerView.Adapter<RightArrivalViewHolder>() {
 
     private var mItems: List<Arrival> = ArrayList<Arrival>()
 
@@ -40,9 +40,16 @@ class RightArrivalAdapter : RecyclerView.Adapter<RightArrivalViewHolder>() {
     override fun onBindViewHolder(holder: RightArrivalViewHolder, position: Int) {
         val arrival : Arrival = mItems[position]
         holder.binding.arrival = mItems[position]
-    }
+        holder.binding.train2Bt.setOnClickListener {
+            listener.request(arrival.trainNum)
+        }
 
+    }
+    interface RightArrivalAdtListener{
+        fun request(trainNum : Int)
+    }
 }
+
 @BindingAdapter("arrivalTime2")
 fun setArrivalTime2(textView : TextView, arrival: Arrival){
 
@@ -62,7 +69,4 @@ fun setArrivalTime2(textView : TextView, arrival: Arrival){
     //현재시간에서 도착시간까지 얼마나 남았는지 계산
     val result = resultFormat.format(arrivalTime.time).toInt() - resultFormat.format(currentTime.time).toInt()
     textView.text = "${result}분 후"
-}
-interface rightArrivalAdtListener{
-    fun request()
 }

@@ -30,14 +30,6 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/icon_menu" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/bm_dohyeon_ttf"
-                android:text="HOME"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
 
 
         </androidx.appcompat.widget.Toolbar>
@@ -46,7 +38,8 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar">
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="-1dp">
 
 
             <LinearLayout
@@ -70,7 +63,7 @@
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp"
-                            app:cardBackgroundColor="@color/appThirdColor"
+                            app:cardBackgroundColor="@color/appSubColor"
                             app:cardCornerRadius="10dp"
                             app:cardElevation="8dp">
 
@@ -104,7 +97,7 @@
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp"
-                            app:cardBackgroundColor="@color/appThirdColor"
+                            app:cardBackgroundColor="@color/appSubColor"
                             app:cardCornerRadius="10dp"
                             app:cardElevation="8dp">
 
@@ -140,7 +133,7 @@
                         android:layout_width="140dp"
                         android:layout_height="140dp"
                         android:layout_margin="10dp"
-                        app:cardBackgroundColor="@color/appThirdColor"
+                        app:cardBackgroundColor="@color/appSubColor"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="8dp">
 
@@ -164,78 +157,6 @@
                         android:textColor="@color/black" />
                 </LinearLayout>
 
-                <!--                <LinearLayout-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:orientation="horizontal">-->
-
-                <!--                    <LinearLayout-->
-                <!--                        android:layout_width="wrap_content"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:orientation="vertical"-->
-                <!--                        >-->
-                <!--                        <androidx.cardview.widget.CardView-->
-                <!--                            android:id="@+id/card_map"-->
-                <!--                            android:layout_width="140dp"-->
-                <!--                            android:layout_height="140dp"-->
-                <!--                            android:layout_margin="10dp"-->
-                <!--                            app:cardBackgroundColor="@color/appThirdColor"-->
-                <!--                            app:cardCornerRadius="10dp"-->
-                <!--                            app:cardElevation="8dp"-->
-                <!--                            >-->
-                <!--                            <ImageButton-->
-                <!--                                android:layout_width="130dp"-->
-                <!--                                android:layout_height="130dp"-->
-                <!--                                android:layout_gravity="center"-->
-                <!--                                android:background="@color/transparent"-->
-                <!--                                android:scaleType="fitXY"-->
-                <!--                                android:src="@drawable/icon_card"-->
-                <!--                                />-->
-                <!--                        </androidx.cardview.widget.CardView>-->
-                <!--                        <TextView-->
-                <!--                            android:layout_width="140dp"-->
-                <!--                            android:layout_height="wrap_content"-->
-                <!--                            android:text="카드등록"-->
-                <!--                            android:textColor="@color/black"-->
-                <!--                            android:fontFamily="@font/bm_dohyeon_ttf"-->
-                <!--                            android:gravity="center"-->
-                <!--                            android:layout_gravity="bottom|center_horizontal"-->
-                <!--                            />-->
-                <!--                    </LinearLayout>-->
-                <!--                    <LinearLayout-->
-                <!--                        android:layout_width="wrap_content"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:orientation="vertical"-->
-                <!--                        >-->
-                <!--                        <androidx.cardview.widget.CardView-->
-                <!--                            android:id="@+id/card_comm"-->
-                <!--                            android:layout_width="140dp"-->
-                <!--                            android:layout_height="140dp"-->
-                <!--                            android:layout_margin="10dp"-->
-                <!--                            app:cardBackgroundColor="@color/appThirdColor"-->
-                <!--                            app:cardCornerRadius="10dp"-->
-                <!--                            app:cardElevation="8dp"-->
-                <!--                            >-->
-                <!--                            <ImageButton-->
-                <!--                                android:id="@+id/explain_bt"-->
-                <!--                                android:layout_width="130dp"-->
-                <!--                                android:layout_height="130dp"-->
-                <!--                                android:layout_gravity="center"-->
-                <!--                                android:background="@color/transparent"-->
-                <!--                                android:scaleType="fitXY"-->
-                <!--                                android:src="@drawable/icon_app"/>-->
-                <!--                        </androidx.cardview.widget.CardView>-->
-                <!--                        <TextView-->
-                <!--                            android:layout_width="140dp"-->
-                <!--                            android:layout_height="wrap_content"-->
-                <!--                            android:text="앱 사용 방법"-->
-                <!--                            android:textColor="@color/black"-->
-                <!--                            android:fontFamily="@font/bm_dohyeon_ttf"-->
-                <!--                            android:gravity="center"-->
-                <!--                            android:layout_gravity="bottom|center_horizontal"-->
-                <!--                            />-->
-                <!--                    </LinearLayout>-->
-                <!--                </LinearLayout>-->
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>

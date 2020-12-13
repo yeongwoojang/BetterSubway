@@ -10,7 +10,9 @@
     <LinearLayout
         android:id="@+id/train1_bt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,6 +44,14 @@
                 android:gravity="bottom"
                 android:text="@{arrival.path}"
                 android:textColor="@color/blue300"
+                android:textSize="13dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|end"
+                android:text="좌석현황"
+                android:paddingRight="10dp"
+                android:textColor="@color/orage200"
                 android:textSize="13dp" />
         </LinearLayout>
 
