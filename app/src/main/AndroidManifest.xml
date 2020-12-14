@@ -14,20 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.TimeTableActivity"></activity>
-        <activity android:name=".view.SeatInfoActivity" />
-        <activity android:name=".view.ReportActivity" />
-        <activity android:name=".view.HomeActivity" />
-        <activity android:name=".view.SignInActivity" />
-        <activity android:name=".view.SignUpActivity" />
-        <activity android:name=".view.SplashActivity">
+        <activity android:name=".view.activity.MyPageActivity"></activity>
+        <activity android:name=".view.InstructionActivity" />
+        <activity android:name=".view.activity.TimeTableActivity" />
+        <activity android:name=".view.activity.SeatInfoActivity" />
+        <activity android:name=".view.activity.ReportActivity" />
+        <activity android:name=".view.activity.HomeActivity" />
+        <activity android:name=".view.activity.SignInActivity" />
+        <activity android:name=".view.activity.SignUpActivity" />
+        <activity android:name=".view.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.MainActivity" />
+        <activity android:name=".view.activity.MainActivity" />
     </application>
 
 </manifest>

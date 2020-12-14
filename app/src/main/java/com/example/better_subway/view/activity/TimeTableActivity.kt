@@ -1,12 +1,10 @@
-package com.example.better_subway.view
+package com.example.better_subway.view.activity
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
@@ -18,7 +16,6 @@ import com.example.better_subway.model.vo.Arrival
 import com.example.better_subway.view.adapter.LeftArrivalAdapter
 import com.example.better_subway.view.adapter.RightArrivalAdapter
 import com.example.better_subway.viewmodel.TimeTableViewModel
-import com.google.android.material.internal.ContextUtils.getActivity
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_time_table.*
@@ -27,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_time_table.*
 class TimeTableActivity : AppCompatActivity(), View.OnClickListener {
 
     var choiceTrainNum : Int =0
-
+    var isBookMark = false
     private val viewModel by viewModels<TimeTableViewModel>()
     private var arrivalList = arrayListOf<Arrival>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,12 +65,48 @@ class TimeTableActivity : AppCompatActivity(), View.OnClickListener {
                 LinearLayoutManager(this@TimeTableActivity, RecyclerView.VERTICAL, false)
             this.adapter = rightAdapter
         }
+
         lefttAdapter.updateItems(viewModel.leftArrivalList)
         rightAdapter.updateItems(viewModel.rightArrivalList)
+
         //왼쪽 목적지 화면에 뿌려주기
         left_direction.text = viewModel.leftArrivalList[0].direction
         right_direction.text = viewModel.rightArrivalList[0].direction
 
+
+        viewModel.chkBookMarkStation(arrivalList[0].station)
+        viewModel.cBmkLiveData.observe(this, Observer {
+            if(it=="404"){
+                var color = ContextCompat.getColor(this, R.color.gray400)
+                bookmark_img.setColorFilter(color)
+                isBookMark = false
+            }else{
+                var color = ContextCompat.getColor(this, R.color.yellow400)
+                bookmark_img.setColorFilter(color)
+                isBookMark = true
+            }
+        })
+
+
+        bookmark_img.setOnClickListener {
+            //북마크 설정안되어있을 시
+            if(!isBookMark){
+                var color = ContextCompat.getColor(this, R.color.yellow400)
+                bookmark_img.setColorFilter(color)
+                viewModel.addBookMarkStation(arrivalList[0].station)
+                isBookMark = true
+            }else{ //북마크 설정 되어있을 시
+                var color = ContextCompat.getColor(this, R.color.gray400)
+                bookmark_img.setColorFilter(color)
+                viewModel.delBookMarkStation(arrivalList[0].station)
+                isBookMark =false
+            }
+
+
+        }
+        viewModel.addBmkLiveData.observe(this, Observer {
+
+        })
 
         val bitmap: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.seat2)
         seat7.setImageBitmap(bitmap)
@@ -98,7 +131,6 @@ class TimeTableActivity : AppCompatActivity(), View.OnClickListener {
         viewModel.seatLiveData.observe(this, Observer { seatList ->
             val color = ContextCompat.getColor(this, R.color.red300)
             val seat = seatList[0]
-            Log.d("TEST", "onCreate: ${seat.toString()}")
                 if (seat.s1==1) {
                     seat1.setColorFilter(color)
                 }

@@ -1,4 +1,4 @@
-package com.example.better_subway.view
+package com.example.better_subway.view.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -29,7 +29,8 @@ class SignInActivity : AppCompatActivity() {
             }
         }
         go_to_main_bt.setOnClickListener {
-            startActivity(Intent(this@SignInActivity,MainActivity::class.java))
+            startActivity(Intent(this@SignInActivity,
+                MainActivity::class.java))
             overridePendingTransition(R.anim.left_in,R.anim.right_out)
             finish()
         }
@@ -37,7 +38,8 @@ class SignInActivity : AppCompatActivity() {
         viewModel.codeLiveData.observe(this, Observer { code->
             if(code=="200"){
                 Snackbar.make(sign_in_layout,"로그인에 성공했습니다.",Snackbar.LENGTH_LONG).show()
-                startActivity(Intent(this@SignInActivity,HomeActivity::class.java))
+                startActivity(Intent(this@SignInActivity,
+                    HomeActivity::class.java))
                 overridePendingTransition(R.anim.right_in,R.anim.left_out)
                 finish()
             }else{

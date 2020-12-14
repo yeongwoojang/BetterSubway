@@ -1,4 +1,4 @@
-package com.example.better_subway.view
+package com.example.better_subway.view.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -33,7 +33,8 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         cancel_bt.setOnClickListener {
-            startActivity(Intent(this@SignUpActivity,MainActivity::class.java))
+            startActivity(Intent(this@SignUpActivity,
+                MainActivity::class.java))
             overridePendingTransition(R.anim.left_in,R.anim.right_out)
             finish()
         }
@@ -41,7 +42,8 @@ class SignUpActivity : AppCompatActivity() {
         viewModel.codeLiveData.observe(this, Observer { code->
             if(code=="200"){
                 Snackbar.make(main_layout,"회원가입 성공",Snackbar.LENGTH_LONG).show()
-                startActivity(Intent(this@SignUpActivity,HomeActivity::class.java))
+                startActivity(Intent(this@SignUpActivity,
+                    HomeActivity::class.java))
                 overridePendingTransition(R.anim.right_in,R.anim.left_out)
                 finish()
             }else{

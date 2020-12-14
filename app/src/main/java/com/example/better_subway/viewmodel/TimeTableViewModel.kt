@@ -23,6 +23,9 @@ class TimeTableViewModel @ViewModelInject constructor(
 
     val seatLiveData = MutableLiveData<List<Seat>>()
 
+    val addBmkLiveData = MutableLiveData<String>()
+    val cBmkLiveData = MutableLiveData<String>()
+    val dBmkLiveData = MutableLiveData<String>()
 
     //   지하철 도착정보를 방향에 따라 나누는 함수
     fun divideTimeTable(arrivalList: List<Arrival>) {
@@ -39,8 +42,6 @@ class TimeTableViewModel @ViewModelInject constructor(
             }
         }
 
-        Log.d("MYMY", "divideTimeTable: ${leftArrivalList.toString()}")
-        Log.d("MYMY", "divideTimeTable: ${rightArrivalList.toString()}")
 
     }
 
@@ -53,7 +54,26 @@ class TimeTableViewModel @ViewModelInject constructor(
         }
     }
 
+    fun addBookMarkStation(station : String){
+        viewModelScope.launch {
+            val data = service.addBookMarkStation(station)
+            addBmkLiveData.value = data
+        }
+    }
 
+    fun chkBookMarkStation(station : String){
+        viewModelScope.launch {
+            val data = service.chkBookMarkStation(station)
+            cBmkLiveData.value = data
+        }
+    }
+
+    fun delBookMarkStation(station : String){
+        viewModelScope.launch {
+            val data = service.delBookMarkStation(station)
+            dBmkLiveData.value = data
+        }
+    }
 
 
 

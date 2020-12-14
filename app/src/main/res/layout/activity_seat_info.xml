@@ -2,11 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/seat_info_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/style_main"
     android:orientation="vertical"
-    tools:context=".view.SeatInfoActivity">
+    tools:context=".view.activity.SeatInfoActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -53,21 +54,23 @@
                     android:layout_margin="10dp"
                     >
                     <EditText
+                        android:id="@+id/search_edt"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_margin="5dp"
-                        android:layout_toLeftOf="@+id/search_bt"
-                        android:background="@drawable/form_edittext"
+                        android:layout_toLeftOf="@id/search_bt"
                         android:backgroundTint="@color/white"
-                        android:paddingLeft="5dp"
+                        android:background="@color/transparent"
+                        android:paddingLeft="10dp"
                         android:elevation="8dp"
                         android:hint="찾으시려는 역을 검색하세요"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/gray200" />
+                        android:textColorHint="@color/gray400" />
                     <ImageButton
                         android:id="@+id/search_bt"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="3dp"
                         android:src="@drawable/icon_search"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"

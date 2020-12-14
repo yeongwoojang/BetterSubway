@@ -3,6 +3,8 @@ package com.example.better_subway.di
 import android.app.Service
 import android.content.Context
 import com.example.better_subway.repository.ServiceApi
+import com.example.better_subway.util.AddCookiesInterceptor
+import com.example.better_subway.util.ReceivedCookiesInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,6 +23,9 @@ object NetworkModule {
     fun getClient(@ApplicationContext context : Context) : ServiceApi{
 
         val okHttpClient = OkHttpClient.Builder()
+            //쿠키를 sharedPreferences에 저장하고 가져온다.
+            .addNetworkInterceptor(AddCookiesInterceptor(context))
+            .addNetworkInterceptor(ReceivedCookiesInterceptor(context))
             .connectTimeout(1,TimeUnit.MINUTES)
             .readTimeout(30,TimeUnit.SECONDS)
             .writeTimeout(15,TimeUnit.SECONDS)

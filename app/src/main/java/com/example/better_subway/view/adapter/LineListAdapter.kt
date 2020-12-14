@@ -19,9 +19,7 @@ class CustomViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
     val binding = ItemLineBinding.bind(itemView)
 }
 class LineListAdapter(private val context : Context, private var listener : LineListener) : RecyclerView.Adapter<CustomViewHolder>(){
-    val noClickColor = ContextCompat.getColor(context, R.color.white)
-    var clickedItem :String = ""
-    var clickedPosition = -1
+
     private var mItems : List<Line> = ArrayList<Line>()
     fun updateItems(items : List<Line>){
         mItems = items;
@@ -44,13 +42,13 @@ class LineListAdapter(private val context : Context, private var listener : Line
 
         holder.binding.lineBt.setOnClickListener {
             if(!line.isClicked){
-                listener.request(position)
+                listener.request(position,line.line)
             }
         }
 
     }
     interface LineListener{
-        fun request(pos : Int)
+        fun request(pos : Int,line : String)
     }
 }
 @BindingAdapter("tabColor")

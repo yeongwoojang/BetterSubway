@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.HomeActivity">
+    tools:context=".view.activity.HomeActivity">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -29,9 +29,6 @@
                 android:background="@color/transparent"
                 android:scaleType="fitXY"
                 android:src="@drawable/icon_menu" />
-
-
-
         </androidx.appcompat.widget.Toolbar>
 
         <RelativeLayout
@@ -83,7 +80,7 @@
                             android:layout_gravity="bottom|center_horizontal"
                             android:fontFamily="@font/bm_dohyeon_ttf"
                             android:gravity="center"
-                            android:text="지하철 노약자석 정보"
+                            android:text="교통약자석 정보"
                             android:textColor="@color/black" />
                     </LinearLayout>
 
@@ -93,7 +90,7 @@
                         android:orientation="vertical">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/card_list"
+
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp"
@@ -102,7 +99,7 @@
                             app:cardElevation="8dp">
 
                             <ImageButton
-                                android:id="@+id/hpt_list_bt"
+                                android:id="@+id/my_page_bt"
                                 android:layout_width="130dp"
                                 android:layout_height="130dp"
                                 android:layout_gravity="center"
@@ -121,42 +118,6 @@
                             android:textColor="@color/black" />
                     </LinearLayout>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/card_comm"
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        android:layout_margin="10dp"
-                        app:cardBackgroundColor="@color/appSubColor"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="8dp">
-
-                        <ImageButton
-                            android:id="@+id/explain_bt"
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:layout_gravity="center"
-                            android:background="@color/transparent"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/icon_app" />
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center_horizontal"
-                        android:fontFamily="@font/bm_dohyeon_ttf"
-                        android:gravity="center"
-                        android:text="앱 사용 방법"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>

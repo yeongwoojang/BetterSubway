@@ -11,10 +11,25 @@ interface ServiceApi {
         val BASE_URL: String = "http://ec2-15-164-129-208.ap-northeast-2.compute.amazonaws.com:3000"
     }
 
+    //서버에 회원가입을 요청
+    @FormUrlEncoded
+    @POST("/android/signUp")
+    suspend fun signUp(
+        @Field("userName") userName: String,
+        @Field("userId") userId: String,
+        @Field("password") password: String
+    ): String
+
+    //서버에 로그인을 요청
+    @GET("/android/signIn")
+    suspend fun signIn(
+        @Query("userId") userId: String,
+        @Query("password") password: String
+    ): String
 
     //지하철 노선들을 서버에 요청
     @GET("/android/stationInfo")
-    suspend fun getStationInfo(): StationInfo
+    suspend fun getStationInfo(@Query("line") line: String): StationInfo
 
     //지하철 도착정보를 서버에 요청
     @GET("/android/arrivalTime")
@@ -27,17 +42,20 @@ interface ServiceApi {
         @Query("blockNum") block: String
     ): SeatInfo
 
-    @FormUrlEncoded
-    @POST("/android/signUp")
-    suspend fun signUp(
-        @Field("userName") userName : String,
-        @Field("userId") userId : String,
-        @Field("password") password :String
-        ) : String
+    @GET("/android/searchStation")
+    suspend fun searchStation(
+        @Query("station") station: String
+    ): StationInfo
 
-    @GET("/android/signIn")
-    suspend fun signIn(
-        @Query("userId") userId : String,
-        @Query("password") password :String
-    ) : String
+    @FormUrlEncoded
+    @POST("/android/addBookMarkStation")
+    suspend fun addBookMarkStation(@Field("station") station: String): String
+
+    @GET("/android/chkBookMarkStation")
+    suspend fun chkBookMarkStation(@Query("station") station :String ): String
+
+    @DELETE("/android/delBookMarkStation")
+    suspend fun delBookMarkStation(@Query("station") station : String) :String
+
+
 }

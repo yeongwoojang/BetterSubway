@@ -13,7 +13,7 @@ class ReceivedCookiesInterceptor(context : Context) :
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalResponse = chain.proceed(chain.request())
-
+        Log.d("checkCookie", "Cookie :${originalResponse.headers("Set-Cookie")}  ")
         if (!originalResponse.headers("Set-Cookie").isEmpty()) {
             val cookies: HashSet<String> = HashSet<String>()
 

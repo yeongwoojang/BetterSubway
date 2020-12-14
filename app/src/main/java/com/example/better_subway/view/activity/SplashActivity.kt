@@ -1,4 +1,4 @@
-package com.example.better_subway.view
+package com.example.better_subway.view.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
