@@ -25,7 +25,7 @@
 
 
                 <ImageButton
-                    android:id="@+id/menu_bt"
+                    android:id="@+id/t_back_bt"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:background="@color/transparent"

@@ -1,5 +1,6 @@
 package com.example.better_subway.view.activity
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
@@ -101,12 +102,13 @@ class TimeTableActivity : AppCompatActivity(), View.OnClickListener {
                 viewModel.delBookMarkStation(arrivalList[0].station)
                 isBookMark =false
             }
-
-
         }
-        viewModel.addBmkLiveData.observe(this, Observer {
+        t_back_bt.setOnClickListener {
+            startActivity(Intent(this@TimeTableActivity,SeatInfoActivity::class.java))
+            overridePendingTransition(R.anim.left_in,R.anim.right_out)
+            finish()
+        }
 
-        })
 
         val bitmap: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.seat2)
         seat7.setImageBitmap(bitmap)

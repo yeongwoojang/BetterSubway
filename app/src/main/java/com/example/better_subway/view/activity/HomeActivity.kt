@@ -41,16 +41,6 @@ class HomeActivity : AppCompatActivity() {
             item.isChecked = true
             drawer_layout.closeDrawers()
             when (item.itemId) {
-                R.id.report -> {
-                    startActivity(
-                        Intent(
-                            this@HomeActivity,
-                            ReportActivity::class.java
-                        )
-                    )
-                    overridePendingTransition(R.anim.right_in, R.anim.left_out);
-                    finish()
-                }    //신고페이지 이동
                 R.id.logout -> {
                     viewModel.logout()
                     startActivity(

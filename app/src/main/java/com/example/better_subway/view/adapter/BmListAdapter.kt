@@ -1,24 +1,44 @@
 package com.example.better_subway.view.adapter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.better_subway.R
+import com.example.better_subway.databinding.ItemBookmarkBinding
 import com.example.better_subway.databinding.ItemLineBinding
+import com.example.better_subway.model.vo.Arrival
+import com.example.better_subway.model.vo.BookMark
 
 
 class BmViewHoler(itemView : View) : RecyclerView.ViewHolder(itemView){
-    val binding = ItemLineBinding.bind(itemView)
+        val binding = ItemBookmarkBinding.bind(itemView)
 }
-class BmListAdapter : RecyclerView.Adapter<BmViewHoler>() {
+class BmListAdapter(private val listener: BmListAdapter.BmListAdtlistener) : RecyclerView.Adapter<BmViewHoler>() {
+
+    private var  mItems :List<BookMark> = ArrayList<BookMark>()
+    fun updateItems(items: List<BookMark>) {
+        mItems = items
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BmViewHoler {
-        TODO("Not yet implemented")
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_bookmark, parent, false)
+        return BmViewHoler(view)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return mItems.size
     }
 
     override fun onBindViewHolder(holder: BmViewHoler, position: Int) {
-        TODO("Not yet implemented")
+        val bookMark  :BookMark  = mItems[position]
+        holder.binding.bookmark = mItems[position]
+        holder.binding.bookmarkText.setOnClickListener {
+            listener.request(bookMark.station)
+        }
+    }
+    interface BmListAdtlistener{
+        fun request(station : String)
     }
 }

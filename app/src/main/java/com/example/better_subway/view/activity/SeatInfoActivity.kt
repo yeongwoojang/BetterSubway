@@ -66,6 +66,12 @@ class SeatInfoActivity : AppCompatActivity() {
                 Snackbar.make(seat_info_layout, "검색어를 입력해주세요.", Snackbar.LENGTH_SHORT).show()
             }
         }
+
+        s_back_bt.setOnClickListener {
+            startActivity(Intent(this@SeatInfoActivity,HomeActivity::class.java))
+            overridePendingTransition(R.anim.left_in,R.anim.right_out)
+            finish()
+        }
         viewModel.stationLiveDate.observe(this, Observer {
             if (it.code == 200) {
                 adapter2.updateItems(it.jsonArray)
@@ -83,6 +89,7 @@ class SeatInfoActivity : AppCompatActivity() {
             val intent = Intent(this@SeatInfoActivity, TimeTableActivity::class.java)
             intent.putParcelableArrayListExtra("arrivalList", it as ArrayList<Arrival>)
             startActivity(intent)
+
         })
     }
 }

@@ -29,7 +29,24 @@
                 android:background="@color/transparent"
                 android:scaleType="fitXY"
                 android:src="@drawable/icon_menu" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/bm_dohyeon_ttf"
+                android:text="Better Subway"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
         </androidx.appcompat.widget.Toolbar>
+        <ImageView
+            android:id="@+id/main_image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_subway"
+            />
 
         <RelativeLayout
             android:id="@+id/linearLayout"

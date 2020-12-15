@@ -1,6 +1,7 @@
 package com.example.better_subway.repository
 
 import com.example.better_subway.model.vo.ArrivalInfo
+import com.example.better_subway.model.vo.BookMarkInfo
 import com.example.better_subway.model.vo.SeatInfo
 import com.example.better_subway.model.vo.StationInfo
 import retrofit2.http.*
@@ -57,5 +58,7 @@ interface ServiceApi {
     @DELETE("/android/delBookMarkStation")
     suspend fun delBookMarkStation(@Query("station") station : String) :String
 
+    @GET("/android/getBookMarkList")
+    suspend fun getBookMarkList() : BookMarkInfo
 
 }

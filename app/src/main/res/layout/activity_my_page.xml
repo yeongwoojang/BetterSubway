@@ -19,7 +19,7 @@
             android:background="@color/transparent">
 
             <ImageButton
-                android:id="@+id/menu_bt"
+                android:id="@+id/m_back_bt"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@color/transparent"
@@ -39,49 +39,80 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/toolbar"
             android:layout_margin="20dp"
             android:elevation="8dp"
             app:cardCornerRadius="10dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/bm_dohyeon_ttf"
-                android:text="jyw1218님 환영합니다."
                 android:layout_margin="10dp"
+                android:fontFamily="@font/bm_dohyeon_ttf"
+                android:padding="5dp"
+                android:text="jyw1218님 환영합니다."
                 android:textColor="@color/black"
                 android:textSize="15dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_below="@+id/cardView"
             android:id="@+id/centerCardView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/cardView"
             android:layout_margin="20dp"
             android:elevation="8dp"
             app:cardCornerRadius="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/bm_dohyeon_ttf"
-                android:text="즐겨찾기"
-                android:layout_margin="15dp"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/icon_star" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/bm_dohyeon_ttf"
+                        android:text="즐겨찾기"
+                        android:gravity="bottom"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/bm_dohyeon_ttf"
+                    android:text="역을 선택하시면 빠르게 도착정보페이지로 이동합니다."
+                    android:textSize="10dp" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/bm_recyclerView"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginBottom="15dp"
-                    />
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>

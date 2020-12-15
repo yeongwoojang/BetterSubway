@@ -2,14 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="none">
         <item
-            android:id="@+id/report"
-            android:icon="@drawable/icon_technics"
-            android:title="고장신고"
-
-
-            />
-
-        <item
             android:id="@+id/logout"
             android:icon="@drawable/icon_logout"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
