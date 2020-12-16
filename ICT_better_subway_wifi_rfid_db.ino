@@ -45,6 +45,7 @@ void setup(){
   while (WiFi.status() != WL_CONNECTED) {  // 와이파이 잡힐때까지 기다림
     delay(500);
     Serial.print(".1");
+    
   }
 
     if (MDNS.begin("esp8266")) {
