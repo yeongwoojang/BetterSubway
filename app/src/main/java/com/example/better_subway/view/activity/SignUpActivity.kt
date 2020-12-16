@@ -2,6 +2,7 @@ package com.example.better_subway.view.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -55,5 +56,16 @@ class SignUpActivity : AppCompatActivity() {
             }
 
         })
+    }
+    override fun onBackPressed() {
+        var tempTime = System.currentTimeMillis()
+        var intervalTime = tempTime- HomeActivity.backPressedTime
+        if(0<=intervalTime && HomeActivity.FINISH_INTERVAL_TIME >= intervalTime){
+            super.onBackPressed()
+        }else{
+            HomeActivity.backPressedTime = tempTime
+            Toast.makeText(applicationContext,"뒤로가기 버튼을 한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }

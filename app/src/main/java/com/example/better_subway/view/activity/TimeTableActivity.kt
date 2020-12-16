@@ -7,6 +7,7 @@ import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
@@ -214,5 +215,16 @@ class TimeTableActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         resetSeatInfo()
         viewModel.getSeatInfo(choiceTrainNum,v?.tag.toString())
+    }
+    override fun onBackPressed() {
+        var tempTime = System.currentTimeMillis()
+        var intervalTime = tempTime- HomeActivity.backPressedTime
+        if(0<=intervalTime && HomeActivity.FINISH_INTERVAL_TIME >= intervalTime){
+            super.onBackPressed()
+        }else{
+            HomeActivity.backPressedTime = tempTime
+            Toast.makeText(applicationContext,"뒤로가기 버튼을 한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
