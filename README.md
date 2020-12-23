@@ -13,7 +13,7 @@
 
 
 
-<img src="C:\Users\sayeong\Desktop\image.png"></img>
+<img src="https://user-images.githubusercontent.com/52729223/102990754-452f4b80-455b-11eb-9206-7fa0fb7ad561.png"></img>
 
 
 
