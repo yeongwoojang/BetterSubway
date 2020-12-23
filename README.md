@@ -12,7 +12,7 @@
 #### Android(Kotlin), MVVM, Hilt, AAC, Node.js, AWS(EC2, RDS), Mysql, Arduino
 
 
-<img src="https://user-images.githubusercontent.com/52729223/102992297-52016e80-455e-11eb-9669-a9597fc14170.png"></img>
+<img src="https://user-images.githubusercontent.com/52729223/102992554-c0dec780-455e-11eb-9d91-df592df0ed68.png"></img>
 
 
 
