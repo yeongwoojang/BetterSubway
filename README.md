@@ -13,7 +13,7 @@
 
 
 
-<img src="C:\Users\sayeong\Desktop\image.png">
+<img src="C:\Users\sayeong\Desktop\image.png"></img>
 
 
 
